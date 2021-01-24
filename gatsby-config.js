@@ -15,6 +15,25 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-remark-images`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        // add default layouts once you have them
+        // defaultLayouts: {
+        //  resources: require.resolve("./src/components/layouts/mdx-layout-resource.js"),
+      //  default: require.resolve("./src/components/layouts/mdx-layout-basic.js"),
+      },
+      gatsbyRemarkPlugins: [
+        {
+          resolve: `gatsby-remark-images`,
+          options: {
+            maxWidth: 960,
+          },
+        },
+      ],
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
